@@ -1,0 +1,14 @@
+body {
+
+}
+
+#restaurants {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: green;
+}
+
+.cards {
+  flex-direction: column;
+  background-color: yellow;
+}
