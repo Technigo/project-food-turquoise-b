@@ -12,7 +12,7 @@ fetch(url, { headers: { "user-key": apiKey } })
     json.restaurants.forEach((resto) => {
       //console.log(resto.restaurant.name)
       document.getElementById("restaurants").innerHTML +=
-        `<div class="cards"><img src=${resto.restaurant.photos[0].photo.thumb_url}>
+        `<div class="cards"><img class="image" src=${resto.restaurant.photos[0].photo.url}>
       <li>${resto.restaurant.name} </li>
       <li>${resto.restaurant.average_cost_for_two} €</li>
       <li>${resto.restaurant.location.address}</li>

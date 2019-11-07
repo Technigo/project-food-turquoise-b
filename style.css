@@ -3,6 +3,7 @@ body {
 }
 
 #restaurants {
+  padding:0;
   display: flex;
   flex-wrap: wrap;
   background-color: green;
@@ -11,4 +12,21 @@ body {
 .cards {
   flex-direction: column;
   background-color: yellow;
+  margin:10px;
+  width: 400px;
+  align-content: center;
+  justify-content: center;
+}
+
+li {
+  list-style: none;
+}
+
+.image {
+  object-position: center;
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+
+  
 }
