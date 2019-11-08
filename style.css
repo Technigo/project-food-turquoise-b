@@ -6,6 +6,10 @@ body {
   box-sizing: border-box;
 }
 
+.container {
+  margin: 10px;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -18,7 +22,6 @@ header {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
-  
 }
 
 .cards {
@@ -34,6 +37,7 @@ header {
 li {
   list-style: none;
   margin: 0;
+  padding: 0;
 }
 
 .image {
@@ -76,35 +80,68 @@ padding: 5px;
   margin-bottom: 5px;
 }
 
+.filters {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#price-3, #price-4, #rating-3, #rating-3-5, #rating-4, #rating-4-5, #rating-5 {
+  margin:3px;
+  border:solid 2px #b14656;
+  color:white;
+  font-size: 15px;
+  background-color:#c66163;
+  height: 30px;
+  border-radius:5px;
+  width:auto;
+}
+
+#restore-filter {
+  align-self: center;
+  margin:40px 0;
+  color:white;
+  background-color:#691b28;
+  height:40px;
+  width: 150px;
+  border-radius: 5px;
+  font-size: 15px;
+
+}
+
 /*MEDIA QUERIES*/
 
 @media (min-width: 650px) {
 
 header {
-  display: flex;
-  justify-content: space-between;
   height: 80px;
-  background: linear-gradient(#F4F7F8, white);
   font-size: 26px;
 }
-.cards {
-  flex-direction: column;
-  background-color: white;
-  margin:20px;
-  width: 40%;
-  align-content: center;
-  justify-content: center;
+
+#restaurants {
+  justify-content: space-evenly;
 }
 
-/* Title*/
+.cards {
+  margin:20px;
+  width: 40%;
+}
+
+
 h1 {
   padding: 5px;
-  margin-left:35px;
-
 }
 
 .restaurantType {
   font-size: 30px;
 }
 
+}
+
+@media (min-width: 1000px) {
+
+  .cards {
+    width: 20%;
+  }
 }
