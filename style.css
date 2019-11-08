@@ -17,6 +17,13 @@ header {
   background: linear-gradient(#F4F7F8, white);
 }
 
+header img {
+  margin-top: 10px;
+  height: 35px;
+  width: auto;
+  object-fit: cover;
+}
+
 #restaurants {
   padding:0;
   display: flex;
@@ -119,6 +126,13 @@ header {
   font-size: 26px;
 }
 
+header img {
+  margin: 10px;
+  height: 70px;
+  width: auto;
+  object-fit: cover;
+}
+
 #restaurants {
   justify-content: space-evenly;
 }
@@ -143,5 +157,12 @@ h1 {
 
   .cards {
     width: 20%;
+  }
+
+  header img {
+    margin: 20px 100px;
+    height: 100px;
+    width: auto;
+    object-fit: cover;
   }
 }
