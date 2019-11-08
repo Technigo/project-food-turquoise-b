@@ -16,13 +16,15 @@ fetch(url, { headers: { "user-key": apiKey } })
     restaurantList = json.restaurants
     restaurantList.forEach((resto) => {
       document.getElementById("restaurants").innerHTML +=
-        `<img src=${resto.restaurant.photos[0].photo.thumb_url}> 
-      <li>${resto.restaurant.name} </li> 
-      <li>${resto.restaurant.average_cost_for_two} €</li> 
-      <li>${resto.restaurant.location.address}</li> 
-      <li>${resto.restaurant.user_rating.aggregate_rating}</li>
-      <li>${resto.restaurant.price_range}</li>`
+      `<div class="cards"><img class="image" src=${resto.restaurant.photos[0].photo.url}>
+      <li><h2>${resto.restaurant.name}</h2> </li>
+      <li><h5>Average price: ${resto.restaurant.average_cost_for_two} ${resto.restaurant.currency}</h5></li>
+      <li><h4>Adress: ${resto.restaurant.location.address}</h4></li>
+      <li><h3>Rating: ${resto.restaurant.user_rating.aggregate_rating} 🐙<h3></li>
+      <li><h3>Price range ${resto.restaurant.price_range}</li>
+      </div>`    
     })
+
   });
 
 
@@ -40,12 +42,13 @@ fetch(url, { headers: { "user-key": apiKey } })
       if (resto.restaurant.price_range == 3) {
         //show restaurants if price range = 3
         document.getElementById("restaurants").innerHTML +=
-        `<img src=${resto.restaurant.photos[0].photo.thumb_url}> 
-        <li>${resto.restaurant.name} </li> 
-        <li>${resto.restaurant.average_cost_for_two} €</li> 
-      <li>${resto.restaurant.location.address}</li> 
-      <li>${resto.restaurant.user_rating.aggregate_rating}</li>
-      <li>${resto.restaurant.price_range}</li>`
+      `<div class="cards"><img class="image" src=${resto.restaurant.photos[0].photo.url}>
+      <li><h2>${resto.restaurant.name}</h2> </li>
+      <li><h5>Average price: ${resto.restaurant.average_cost_for_two} ${resto.restaurant.currency}</h5></li>
+      <li><h4>Adress: ${resto.restaurant.location.address}</h4></li>
+      <li><h3>Rating: ${resto.restaurant.user_rating.aggregate_rating} 🐙<h3></li>
+      <li><h3>Price range ${resto.restaurant.price_range}</li>
+      </div>` 
         } else {
           // don't show other restaurants
           return
@@ -64,12 +67,13 @@ fetch(url, { headers: { "user-key": apiKey } })
       if (resto.restaurant.price_range == 4) {
         //show restaurants if price range = 4
         document.getElementById("restaurants").innerHTML +=
-        `<img src=${resto.restaurant.photos[0].photo.thumb_url}> 
-        <li>${resto.restaurant.name} </li> 
-        <li>${resto.restaurant.average_cost_for_two} €</li> 
-      <li>${resto.restaurant.location.address}</li> 
-      <li>${resto.restaurant.user_rating.aggregate_rating}</li>
-      <li>${resto.restaurant.price_range}</li>`
+      `<div class="cards"><img class="image" src=${resto.restaurant.photos[0].photo.url}>
+      <li><h2>${resto.restaurant.name}</h2> </li>
+      <li><h5>Average price: ${resto.restaurant.average_cost_for_two} ${resto.restaurant.currency}</h5></li>
+      <li><h4>Adress: ${resto.restaurant.location.address}</h4></li>
+      <li><h3>Rating: ${resto.restaurant.user_rating.aggregate_rating} 🐙<h3></li>
+      <li><h3>Price range ${resto.restaurant.price_range}</li>
+      </div>` 
         } else {
           // don't show other restaurants
           return
@@ -86,11 +90,12 @@ fetch(url, { headers: { "user-key": apiKey } })
     restaurantList.forEach((resto) => {
         //show all restaurants 
         document.getElementById("restaurants").innerHTML +=
-        `<img src=${resto.restaurant.photos[0].photo.thumb_url}> 
-        <li>${resto.restaurant.name} </li> 
-        <li>${resto.restaurant.average_cost_for_two} €</li> 
-      <li>${resto.restaurant.location.address}</li> 
-      <li>${resto.restaurant.user_rating.aggregate_rating}</li>
-      <li>${resto.restaurant.price_range}</li>`
+      `<div class="cards"><img class="image" src=${resto.restaurant.photos[0].photo.url}>
+      <li><h2>${resto.restaurant.name}</h2> </li>
+      <li><h5>Average price: ${resto.restaurant.average_cost_for_two} ${resto.restaurant.currency}</h5></li>
+      <li><h4>Adress: ${resto.restaurant.location.address}</h4></li>
+      <li><h3>Rating: ${resto.restaurant.user_rating.aggregate_rating} 🐙<h3></li>
+      <li><h3>Price range ${resto.restaurant.price_range}</li>
+      </div>` 
     })
   }

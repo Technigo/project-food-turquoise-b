@@ -1,0 +1,110 @@
+/* BOX SIZING ska gälla för alla boxar utom de som har UNSET */
+*, *::before, *::after {box-sizing: inherit}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  background: linear-gradient(#F4F7F8, white);
+}
+
+#restaurants {
+  padding:0;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  
+}
+
+.cards {
+  flex-direction: column;
+  background-color: white;
+  /* margin:40px; */
+  width: 100%;
+  align-content: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+}
+
+.image {
+  object-position: center;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 400ms;
+}
+
+.image:hover {
+  transform: scale(1.05);
+}
+
+
+h1 {
+  padding: 10px, 5px, 0;
+  color:rgb(238, 77, 77);
+  font-family: 'McLaren', cursive;
+
+}
+
+h4 {
+  color:grey;
+  font-weight: 400;
+}
+
+
+h1, h2, h3, h4, h5 {
+margin:0;
+padding: 5px;
+}
+
+.restaurantType {
+  color:grey;
+  padding: 5px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 17px;
+  margin-bottom: 5px;
+}
+
+/*MEDIA QUERIES*/
+
+@media (min-width: 650px) {
+
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  background: linear-gradient(#F4F7F8, white);
+  font-size: 26px;
+}
+.cards {
+  flex-direction: column;
+  background-color: white;
+  margin:20px;
+  width: 40%;
+  align-content: center;
+  justify-content: center;
+}
+
+/* Title*/
+h1 {
+  padding: 5px;
+  margin-left:35px;
+
+}
+
+.restaurantType {
+  font-size: 30px;
+}
+
+}

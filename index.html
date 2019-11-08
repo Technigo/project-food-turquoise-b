@@ -5,11 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css?family=McLaren|Open+Sans:300,400,700&display=swap" rel="stylesheet">
+  <title>Restaurants</title>
 </head>
 
 <body>
-  <h1>Seafood restaurants in Lisbon</h1>
+  <header>
+    <h1>Dinner tonight</h1>
+  </header>
+
+  <h1 class="restaurantType">Seafood restaurants in Lisbon</h1>
   <div class="filters">
     <div id="price-filter"> <h4>Price</h4> 
       <button id="price-3">I'm broke</button>
@@ -27,8 +33,10 @@
     
     <button id="restore-filter">Restore all filters</button>
   </div>
-
-  <ul id="restaurants"></ul>
+  <div class="container">
+  
+    <ul id="restaurants"></ul>
+  </div>
   <script src="script.js"></script>
 </body>
 
