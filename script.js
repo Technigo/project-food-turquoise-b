@@ -21,17 +21,44 @@ fetch(url, { headers: { "user-key": apiKey } })
       <li><h2>${resto.restaurant.name}</h2> </li>
       <li><h5>Average price: ${resto.restaurant.average_cost_for_two} ${resto.restaurant.currency}</h5></li>
       <li><h4>Adress: ${resto.restaurant.location.address}</h4></li>
-      // <li><h3>Rating: ${ratingIcon(resto.restaurant.user_rating.aggregate_rating)} <h3></li>
+      <li><h3>Rating: ${ratingIcon(resto.restaurant.user_rating.aggregate_rating)} <h3></li>
       <li><h3>Price range ${resto.restaurant.price_range}</li>
       </div>`    
     })
 
   });
 
-  // const ratingIcon = (rating) => {
-  //   console.log(rating)
-  //   return "🐙"
-  // }
+  const ratingIcon = (rating) => {
+    if (rating >= 4.8 && rating <= 5) {
+      //show restaurants if rating = 5
+      return `<img src="/assets/octopus1.png">
+      <img src="/assets/octopus1.png">
+      <img src="/assets/octopus1.png">
+      <img src="/assets/octopus1.png">
+      <img src="/assets/octopus1.png">`
+    } else if (rating >= 4.4 && rating <= 4.7) {
+      return  `<img src="/assets/octopus1.png">
+      <img src="/assets/octopus1.png">
+      <img src="/assets/octopus1.png">
+      <img src="/assets/octopus1.png">
+      <img src="/assets/octopus05.png">`
+
+    } else if (rating >= 3.8 && rating <= 4.3) {
+      return  `<img src="/assets/octopus1.png">
+      <img src="/assets/octopus1.png">
+      <img src="/assets/octopus1.png">
+      <img src="/assets/octopus1.png">`
+    } else if (rating >= 3.4 && rating <= 3.7) {
+      return  `<img src="/assets/octopus1.png">
+      <img src="/assets/octopus1.png">
+      <img src="/assets/octopus1.png">
+      <img src="/assets/octopus05.png">`
+    } else {
+     return  `<img src="/assets/octopus1.png">
+     <img src="/assets/octopus1.png">
+     <img src="/assets/octopus1.png">`
+   }
+  }
 
   // Move Restaurant content / info into function to use in filter functions
   
@@ -166,7 +193,7 @@ const rating4 = () => {
   document.getElementById("restaurants").innerHTML=""
   restaurantList.forEach((resto) => {
     let rating = resto.restaurant.user_rating.aggregate_rating
-    if (rating >= 4 && rating <= 4.3) {
+    if (rating >= 3.8 && rating <= 4.3) {
       //show restaurants if rating = 4
       document.getElementById("restaurants").innerHTML +=
     `<div class="cards"><img class="image" src=${resto.restaurant.photos[0].photo.url}>
