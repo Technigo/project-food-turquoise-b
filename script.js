@@ -14,19 +14,41 @@ fetch(url, { headers: { "user-key": apiKey } })
   .then((json) => {
     console.log(json);
     restaurantList = json.restaurants
+
     restaurantList.forEach((resto) => {
       document.getElementById("restaurants").innerHTML +=
       `<div class="cards"><img class="image" src=${resto.restaurant.photos[0].photo.url}>
       <li><h2>${resto.restaurant.name}</h2> </li>
       <li><h5>Average price: ${resto.restaurant.average_cost_for_two} ${resto.restaurant.currency}</h5></li>
       <li><h4>Adress: ${resto.restaurant.location.address}</h4></li>
-      <li><h3>Rating: ${resto.restaurant.user_rating.aggregate_rating} 🐙<h3></li>
+      // <li><h3>Rating: ${ratingIcon(resto.restaurant.user_rating.aggregate_rating)} <h3></li>
       <li><h3>Price range ${resto.restaurant.price_range}</li>
       </div>`    
     })
 
   });
 
+  // const ratingIcon = (rating) => {
+  //   console.log(rating)
+  //   return "🐙"
+  // }
+
+  // Move Restaurant content / info into function to use in filter functions
+  
+  // const restaurantContent = () => {
+  //   restaurantList.forEach((item) => {
+  //        const restaurant = item.restaurant
+          
+  //       document.getElementById("restaurants").innerHTML +=
+  //     `<div class="cards"><img class="image" src=${restaurant.photos[0].photo.url}>
+  //     <li><h2>${restaurant.name}</h2> </li>
+  //     <li><h5>Average price: ${restaurant.average_cost_for_two} ${resto.restaurant.currency}</h5></li>
+  //     <li><h4>Adress: ${restaurant.location.address}</h4></li>
+  //     <li><h3>Rating: ${restaurant.user_rating.aggregate_rating} 🐙<h3></li>
+  //     <li><h3>Price range ${restaurant.price_range}</li>
+  //     </div>` 
+  //       })
+  // }
 
   // FUNCTIONS
  // Filter on price range
@@ -48,7 +70,7 @@ fetch(url, { headers: { "user-key": apiKey } })
       <li><h4>Adress: ${resto.restaurant.location.address}</h4></li>
       <li><h3>Rating: ${resto.restaurant.user_rating.aggregate_rating} 🐙<h3></li>
       <li><h3>Price range ${resto.restaurant.price_range}</li>
-      </div>` 
+      </div>`
         } else {
           // don't show other restaurants
           return
@@ -80,6 +102,142 @@ fetch(url, { headers: { "user-key": apiKey } })
         }
     })
   }
+
+// Rating filters
+
+document.getElementById("rating-3").addEventListener('click', () => {
+  rating3()
+})
+
+const rating3 = () => {
+  // Null all restaurants
+  document.getElementById("restaurants").innerHTML=""
+  restaurantList.forEach((resto) => {
+    let rating = resto.restaurant.user_rating.aggregate_rating
+    if (rating >= 3 && rating <= 3.3) {
+      //show restaurants if rating = 3
+      document.getElementById("restaurants").innerHTML +=
+    `<div class="cards"><img class="image" src=${resto.restaurant.photos[0].photo.url}>
+    <li><h2>${resto.restaurant.name}</h2> </li>
+    <li><h5>Average price: ${resto.restaurant.average_cost_for_two} ${resto.restaurant.currency}</h5></li>
+    <li><h4>Adress: ${resto.restaurant.location.address}</h4></li>
+    <li><h3>Rating: ${resto.restaurant.user_rating.aggregate_rating} 🐙<h3></li>
+    <li><h3>Price range ${resto.restaurant.price_range}</li>
+    </div>` 
+      } else {
+        // don't show other restaurants
+        return
+      }
+  })
+}
+
+document.getElementById("rating-3-5").addEventListener('click', () => {
+  rating35()
+})
+
+const rating35 = () => {
+  // Null all restaurants
+  document.getElementById("restaurants").innerHTML=""
+  restaurantList.forEach((resto) => {
+    let rating = resto.restaurant.user_rating.aggregate_rating
+    if (rating >= 3.4 && rating <= 3.7) {
+      //show restaurants if rating = 3.5
+      document.getElementById("restaurants").innerHTML +=
+    `<div class="cards"><img class="image" src=${resto.restaurant.photos[0].photo.url}>
+    <li><h2>${resto.restaurant.name}</h2> </li>
+    <li><h5>Average price: ${resto.restaurant.average_cost_for_two} ${resto.restaurant.currency}</h5></li>
+    <li><h4>Adress: ${resto.restaurant.location.address}</h4></li>
+    <li><h3>Rating: ${resto.restaurant.user_rating.aggregate_rating} 🐙<h3></li>
+    <li><h3>Price range ${resto.restaurant.price_range}</li>
+    </div>` 
+      } else {
+        // don't show other restaurants
+        return
+      }
+  })
+}
+
+document.getElementById("rating-4").addEventListener('click', () => {
+  rating4()
+})
+
+const rating4 = () => {
+  // Null all restaurants
+  document.getElementById("restaurants").innerHTML=""
+  restaurantList.forEach((resto) => {
+    let rating = resto.restaurant.user_rating.aggregate_rating
+    if (rating >= 4 && rating <= 4.3) {
+      //show restaurants if rating = 4
+      document.getElementById("restaurants").innerHTML +=
+    `<div class="cards"><img class="image" src=${resto.restaurant.photos[0].photo.url}>
+    <li><h2>${resto.restaurant.name}</h2> </li>
+    <li><h5>Average price: ${resto.restaurant.average_cost_for_two} ${resto.restaurant.currency}</h5></li>
+    <li><h4>Adress: ${resto.restaurant.location.address}</h4></li>
+    <li><h3>Rating: ${resto.restaurant.user_rating.aggregate_rating} 🐙<h3></li>
+    <li><h3>Price range ${resto.restaurant.price_range}</li>
+    </div>` 
+      } else {
+        // don't show other restaurants
+        return
+      }
+  })
+}
+
+document.getElementById("rating-4-5").addEventListener('click', () => {
+  rating45()
+})
+
+const rating45 = () => {
+  // Null all restaurants
+  document.getElementById("restaurants").innerHTML=""
+  restaurantList.forEach((resto) => {
+    let rating = resto.restaurant.user_rating.aggregate_rating
+    if (rating >= 4.4 && rating <= 4.7) {
+      //show restaurants if rating = 4.5
+      document.getElementById("restaurants").innerHTML +=
+    `<div class="cards"><img class="image" src=${resto.restaurant.photos[0].photo.url}>
+    <li><h2>${resto.restaurant.name}</h2> </li>
+    <li><h5>Average price: ${resto.restaurant.average_cost_for_two} ${resto.restaurant.currency}</h5></li>
+    <li><h4>Adress: ${resto.restaurant.location.address}</h4></li>
+    <li><h3>Rating: ${resto.restaurant.user_rating.aggregate_rating} 🐙<h3></li>
+    <li><h3>Price range ${resto.restaurant.price_range}</li>
+    </div>` 
+      } else {
+        // don't show other restaurants
+        return
+      }
+  })
+}
+
+document.getElementById("rating-5").addEventListener('click', () => {
+  rating5()
+})
+
+const rating5 = () => {
+  // Null all restaurants
+  document.getElementById("restaurants").innerHTML=""
+  restaurantList.forEach((resto) => {
+    let rating = resto.restaurant.user_rating.aggregate_rating
+    if (rating >= 4.8 && rating <= 5) {
+      //show restaurants if rating = 5
+      document.getElementById("restaurants").innerHTML +=
+    `<div class="cards"><img class="image" src=${resto.restaurant.photos[0].photo.url}>
+    <li><h2>${resto.restaurant.name}</h2> </li>
+    <li><h5>Average price: ${resto.restaurant.average_cost_for_two} ${resto.restaurant.currency}</h5></li>
+    <li><h4>Adress: ${resto.restaurant.location.address}</h4></li>
+    <li><h3>Rating: ${resto.restaurant.user_rating.aggregate_rating} 🐙<h3></li>
+    <li><h3>Price range ${resto.restaurant.price_range}</li>
+    </div>` 
+      } else {
+        // don't show other restaurants
+        return
+      }
+  })
+}
+
+// Restore all filters filter
+
+
   document.getElementById("restore-filter").addEventListener('click', () => {
     restoreFilter()
   })
@@ -99,3 +257,5 @@ fetch(url, { headers: { "user-key": apiKey } })
       </div>` 
     })
   }
+
+
