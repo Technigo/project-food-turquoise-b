@@ -95,7 +95,7 @@ fetch(url, { headers: { "user-key": apiKey } })
       <li><h2>${resto.restaurant.name}</h2> </li>
       <li><h5>Average price: ${resto.restaurant.average_cost_for_two} ${resto.restaurant.currency}</h5></li>
       <li><h4>Adress: ${resto.restaurant.location.address}</h4></li>
-      <li><h3>Rating: ${resto.restaurant.user_rating.aggregate_rating} 🐙<h3></li>
+      <li><h3>Rating: ${ratingIcon(resto.restaurant.user_rating.aggregate_rating)} <h3></li>
       <li><h3>Price range ${resto.restaurant.price_range}</li>
       </div>`
         } else {
@@ -120,7 +120,7 @@ fetch(url, { headers: { "user-key": apiKey } })
       <li><h2>${resto.restaurant.name}</h2> </li>
       <li><h5>Average price: ${resto.restaurant.average_cost_for_two} ${resto.restaurant.currency}</h5></li>
       <li><h4>Adress: ${resto.restaurant.location.address}</h4></li>
-      <li><h3>Rating: ${resto.restaurant.user_rating.aggregate_rating} 🐙<h3></li>
+      <li><h3>Rating: ${ratingIcon(resto.restaurant.user_rating.aggregate_rating)} <h3></li>
       <li><h3>Price range ${resto.restaurant.price_range}</li>
       </div>` 
         } else {
@@ -148,7 +148,7 @@ const rating3 = () => {
     <li><h2>${resto.restaurant.name}</h2> </li>
     <li><h5>Average price: ${resto.restaurant.average_cost_for_two} ${resto.restaurant.currency}</h5></li>
     <li><h4>Adress: ${resto.restaurant.location.address}</h4></li>
-    <li><h3>Rating: ${resto.restaurant.user_rating.aggregate_rating} 🐙<h3></li>
+    <li><h3>Rating: ${ratingIcon(resto.restaurant.user_rating.aggregate_rating)} <h3></li>
     <li><h3>Price range ${resto.restaurant.price_range}</li>
     </div>` 
       } else {
@@ -174,7 +174,7 @@ const rating35 = () => {
     <li><h2>${resto.restaurant.name}</h2> </li>
     <li><h5>Average price: ${resto.restaurant.average_cost_for_two} ${resto.restaurant.currency}</h5></li>
     <li><h4>Adress: ${resto.restaurant.location.address}</h4></li>
-    <li><h3>Rating: ${resto.restaurant.user_rating.aggregate_rating} 🐙<h3></li>
+    <li><h3>Rating: ${ratingIcon(resto.restaurant.user_rating.aggregate_rating)} <h3></li>
     <li><h3>Price range ${resto.restaurant.price_range}</li>
     </div>` 
       } else {
@@ -200,7 +200,7 @@ const rating4 = () => {
     <li><h2>${resto.restaurant.name}</h2> </li>
     <li><h5>Average price: ${resto.restaurant.average_cost_for_two} ${resto.restaurant.currency}</h5></li>
     <li><h4>Adress: ${resto.restaurant.location.address}</h4></li>
-    <li><h3>Rating: ${resto.restaurant.user_rating.aggregate_rating} 🐙<h3></li>
+    <li><h3>Rating: ${ratingIcon(resto.restaurant.user_rating.aggregate_rating)} <h3></li>
     <li><h3>Price range ${resto.restaurant.price_range}</li>
     </div>` 
       } else {
@@ -226,7 +226,7 @@ const rating45 = () => {
     <li><h2>${resto.restaurant.name}</h2> </li>
     <li><h5>Average price: ${resto.restaurant.average_cost_for_two} ${resto.restaurant.currency}</h5></li>
     <li><h4>Adress: ${resto.restaurant.location.address}</h4></li>
-    <li><h3>Rating: ${resto.restaurant.user_rating.aggregate_rating} 🐙<h3></li>
+    <li><h3>Rating: ${ratingIcon(resto.restaurant.user_rating.aggregate_rating)} <h3></li>
     <li><h3>Price range ${resto.restaurant.price_range}</li>
     </div>` 
       } else {
@@ -252,7 +252,7 @@ const rating5 = () => {
     <li><h2>${resto.restaurant.name}</h2> </li>
     <li><h5>Average price: ${resto.restaurant.average_cost_for_two} ${resto.restaurant.currency}</h5></li>
     <li><h4>Adress: ${resto.restaurant.location.address}</h4></li>
-    <li><h3>Rating: ${resto.restaurant.user_rating.aggregate_rating} 🐙<h3></li>
+    <li><h3>Rating: ${ratingIcon(resto.restaurant.user_rating.aggregate_rating)} <h3></li>
     <li><h3>Price range ${resto.restaurant.price_range}</li>
     </div>` 
       } else {
@@ -279,7 +279,7 @@ const rating5 = () => {
       <li><h2>${resto.restaurant.name}</h2> </li>
       <li><h5>Average price: ${resto.restaurant.average_cost_for_two} ${resto.restaurant.currency}</h5></li>
       <li><h4>Adress: ${resto.restaurant.location.address}</h4></li>
-      <li><h3>Rating: ${resto.restaurant.user_rating.aggregate_rating} 🐙<h3></li>
+      <li><h3>Rating: ${ratingIcon(resto.restaurant.user_rating.aggregate_rating)} <h3></li>
       <li><h3>Price range ${resto.restaurant.price_range}</li>
       </div>` 
     })
