@@ -2,9 +2,7 @@
 *, *::before, *::after {box-sizing: inherit}
 
 body {
-  font-family: 'McLaren', cursive;
   font-family: 'Open Sans', sans-serif;
-  background-color: rgb(223, 93, 93);
   box-sizing: border-box;
 }
 
@@ -23,6 +21,7 @@ body {
   width: 100%;
   align-content: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 li {
@@ -46,6 +45,8 @@ li {
 /* Title*/
 h1 {
   padding: 5px;
+  color:rgb(238, 77, 77);
+  font-family: 'McLaren', cursive;
 
 }
 
@@ -64,11 +65,17 @@ h3 {
 /* Address*/
 h4 {
   padding: 5px;
+  color:grey;
+  font-weight: 400;
 }
 
 /* Rating*/
 h5 {
   padding: 5px;
+}
+
+h2, h3, h4, h5 {
+margin:0;
 }
 
 /*MEDIA QUERIES*/
@@ -91,7 +98,7 @@ li {
 .image {
   object-position: center;
   width: 400px;
-  height: 400px;
+  height: 287px;
   object-fit: cover;
   transform: scale(1);
   transition: transform 400ms;
@@ -104,6 +111,7 @@ li {
 /* Title*/
 h1 {
   padding: 5px;
+  margin-left:35px;
 
 }
 
