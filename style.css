@@ -8,7 +8,6 @@ body {
 
 .container {
   margin: 10px;
-
 }
 
 header {
@@ -81,6 +80,36 @@ padding: 5px;
   margin-bottom: 5px;
 }
 
+.filters {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#price-3, #price-4, #rating-3, #rating-3-5, #rating-4, #rating-4-5, #rating-5 {
+  margin:3px;
+  border:solid 2px #b14656;
+  color:white;
+  font-size: 15px;
+  background-color:#c66163;
+  height: 30px;
+  border-radius:5px;
+  width:auto;
+}
+
+#restore-filter {
+  align-self: center;
+  margin:40px 0;
+  color:white;
+  background-color:#691b28;
+  height:40px;
+  width: 150px;
+  border-radius: 5px;
+  font-size: 15px;
+
+}
+
 /*MEDIA QUERIES*/
 
 @media (min-width: 650px) {
@@ -108,12 +137,11 @@ h1 {
   font-size: 30px;
 }
 
-.filters {
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
-}
+@media (min-width: 1000px) {
 
+  .cards {
+    width: 20%;
+  }
+}
