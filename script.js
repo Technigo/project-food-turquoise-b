@@ -81,14 +81,14 @@ const ratingIcon = (rating) => {
 // Filter on price range
 
 document.getElementById("price-3").addEventListener('click', () => {
-  filter3()
+  filterByPrice(3)
 })
 
-const filter3 = () => {
+const filterByPrice = (priceRange) => {
   // Null all restaurants
   document.getElementById("restaurants").innerHTML = ""
   restaurantList.forEach((resto) => {
-    if (resto.restaurant.price_range == 3) {
+    if (resto.restaurant.price_range === (priceRange)) {
       //show restaurants if price range = 3
       document.getElementById("restaurants").innerHTML +=
         `<div class="cards"><img class="image" src=${resto.restaurant.photos[0].photo.url}>
@@ -98,50 +98,47 @@ const filter3 = () => {
       <li><h3>Rating: ${ratingIcon(resto.restaurant.user_rating.aggregate_rating)} <h3></li>
       <li><h3>Price range ${resto.restaurant.price_range}</li>
       </div>`
-    } else {
-      // don't show other restaurants
-      return
     }
   })
 }
 
 document.getElementById("price-4").addEventListener('click', () => {
-  filter4()
+  filterByPrice(4)
 })
 
-const filter4 = () => {
-  // Null all restaurants
-  document.getElementById("restaurants").innerHTML = ""
-  restaurantList.forEach((resto) => {
-    if (resto.restaurant.price_range == 4) {
-      //show restaurants if price range = 4
-      document.getElementById("restaurants").innerHTML +=
-        `<div class="cards"><img class="image" src=${resto.restaurant.photos[0].photo.url}>
-      <li><h2>${resto.restaurant.name}</h2> </li>
-      <li><h5>Average price: ${resto.restaurant.average_cost_for_two} ${resto.restaurant.currency}</h5></li>
-      <li><h4>Adress: ${resto.restaurant.location.address}</h4></li>
-      <li><h3>Rating: ${ratingIcon(resto.restaurant.user_rating.aggregate_rating)} <h3></li>
-      <li><h3>Price range ${resto.restaurant.price_range}</li>
-      </div>`
-    } else {
-      // don't show other restaurants
-      return
-    }
-  })
-}
+// const filter4 = () => {
+//   // Null all restaurants
+//   document.getElementById("restaurants").innerHTML = ""
+//   restaurantList.forEach((resto) => {
+//     if (resto.restaurant.price_range === 4) {
+//       //show restaurants if price range = 4
+//       document.getElementById("restaurants").innerHTML +=
+//         `<div class="cards"><img class="image" src=${resto.restaurant.photos[0].photo.url}>
+//       <li><h2>${resto.restaurant.name}</h2> </li>
+//       <li><h5>Average price: ${resto.restaurant.average_cost_for_two} ${resto.restaurant.currency}</h5></li>
+//       <li><h4>Adress: ${resto.restaurant.location.address}</h4></li>
+//       <li><h3>Rating: ${ratingIcon(resto.restaurant.user_rating.aggregate_rating)} <h3></li>
+//       <li><h3>Price range ${resto.restaurant.price_range}</li>
+//       </div>`
+//     } else {
+//       // don't show other restaurants
+//       return
+//     }
+//   })
+// }
 
 // Rating filters
 
 document.getElementById("rating-3").addEventListener('click', () => {
-  rating3()
+  filterByRating(3)
 })
 
-const rating3 = () => {
+const filterByRating = (restaurantRating) => {
   // Null all restaurants
   document.getElementById("restaurants").innerHTML = ""
   restaurantList.forEach((resto) => {
     let rating = resto.restaurant.user_rating.aggregate_rating
-    if (rating >= 3 && rating <= 3.3) {
+    if (rating >= restaurantRating && rating <= restaurantRating + 0.3) {
       //show restaurants if rating = 3
       document.getElementById("restaurants").innerHTML +=
         `<div class="cards"><img class="image" src=${resto.restaurant.photos[0].photo.url}>
